@@ -15,7 +15,8 @@ class Login:
         self.user = str()
         self.pw = str()
         self.root = tk.Tk()
-        self.login_pg()
+        self.check = False
+
 
     def login_pg(self):
         global login_entry, pw_entry
@@ -60,7 +61,7 @@ class Login:
     def login(self):
         self.user = login_entry.get()
         self.pw = pw_entry.get()
+        self.check = True
+        self.root.destroy()
 
 
-l = Login()
-l.login_pg()
