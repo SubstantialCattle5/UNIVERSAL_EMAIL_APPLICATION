@@ -13,7 +13,7 @@ BLACK = '#1E2022'
 myemail = '************'
 mypassword = '***********'
 sender, subject, body = str(), str(), str()
-
+check = False
 
 class Window:
     def __init__(self):
@@ -22,7 +22,7 @@ class Window:
         self.sender = sender
         self.subject = subject
         self.body = body
-
+        self.check = check
     def display(self):
         # Window
         self.root.minsize(width=WIDTH, height=HEIGHT)
@@ -30,11 +30,8 @@ class Window:
         self.root.config(bg=DARK_WHITE)
 
         def send():
-            global sender, subject, body
-            sender = sender_email.get().strip()
-            subject = sub.get()
-            body = body_text.get(1.0, "end-1c")
-            print(sender, body)
+            global check
+            check = True
 
         # logo
         logo = tk.Canvas(master=self.root, width=350, height=210, bg=DARK_WHITE, highlightthickness=0)

@@ -3,7 +3,7 @@ import datetime as dt
 import random as rd
 import tkinter as tk
 from tkinter import messagebox
-# import UI
+
 # Screen size
 WIDTH, HEIGHT = 800, 650
 
@@ -12,15 +12,18 @@ WHITE = '#F0F5F9'
 DARK_WHITE = '#C9D6DF'
 GREY = '#52616B'
 BLACK = '#1E2022'
+
+# test email info
 myemail = 'notsamless2@gmail.com'
 mypassword = 'likliklik0'
-# display = UI()
+send, subject, body = str(), str(), str()
 
-sender, subject, body = str(), str(), str()
 
 def send():
     # Sender's email , subject  and body
-
+    sender = sender_email.get().strip()
+    subject = sub.get()
+    body = body_text.get(1.0, "end-1c")
     with smtplib.SMTP('smtp.gmail.com') as connection:
         # Encrypting the mail contents
         connection.starttls()
