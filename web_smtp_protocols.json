@@ -1,0 +1,7 @@
+{
+    "gmail": "smtp.gmail.com",
+    "hotmail": "smtp.live.com",
+    "outlook": "outlook.office365.com",
+    "yahoo": "smtp.mail.yahoo.com",
+    "rediff": "smtp.rediffmail.com"
+}

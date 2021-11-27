@@ -52,8 +52,8 @@ class Login:
         space.grid(row=4, column=2)
 
         # Login Button
-        login_button = tk.Button(master=self.root, text='Send', bg=GREY, fg=DARK_WHITE, activebackground=BLACK,
-                                 activeforeground=WHITE, width=15, command=lambda: self.login())
+        login_button = tk.Button(master=self.root, text='Login', bg=GREY, fg=DARK_WHITE, activebackground=BLACK,
+                                 activeforeground=WHITE, width=18, command=lambda: self.login())
         login_button.grid(row=5, column=2)
 
         self.root.mainloop()

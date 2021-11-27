@@ -1,5 +1,5 @@
 import smtplib
-
+import json
 import tkinter as tk
 from tkinter import messagebox
 import login_page as lg
@@ -25,12 +25,19 @@ myemail = login.user
 mypassword = login.pw
 
 
+# Obtaining the email service
+email_service = myemail.split('@')[1].split('.')[0]
+with open('web_smtp_protocols.json' , 'r') as file :
+    data = json.load(file)
+    email_service_smtp = data[email_service]
+
+
 def send(sender_email, sub, body_text):
     # Sender's email , subject  and body
     sender = sender_email.get().strip()
     subject = sub.get()
     body = body_text.get(1.0, "end-1c")
-    with smtplib.SMTP('smtp.gmail.com') as connection:
+    with smtplib.SMTP(email_service_smtp) as connection:
         # Encrypting the mail contents
         connection.starttls()
         connection.login(user=myemail, password=mypassword)
@@ -114,4 +121,4 @@ if login.check:
         root.mainloop()
 
 
-    main_pg()
+    main_pg() # calling the main function
